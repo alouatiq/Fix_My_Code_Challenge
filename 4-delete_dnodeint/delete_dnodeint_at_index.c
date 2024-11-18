@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include <stdio.h>
+#include <stdio.h> /* Added for debug print statements */
 #include "lists.h"
 
 /**
@@ -17,7 +17,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
     /* Check if the list is empty or head is NULL */
     if (head == NULL || *head == NULL) {
-        printf("Error: List is empty or head is NULL\n"); // Debug print
+        printf("Error: List is empty or head is NULL\n"); /* Debug print */
         return (-1);
     }
 
@@ -25,7 +25,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
     /* If deleting the first node */
     if (index == 0) {
-        printf("Deleting node at index 0: %d\n", current->n); // Debug print
+        printf("Deleting node at index 0: %d\n", current->n); /* Debug print */
         *head = current->next;
         if (current->next != NULL)
             current->next->prev = NULL;
@@ -35,17 +35,17 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
     /* Traverse the list to find the node at the given index */
     for (i = 0; current != NULL && i < index; i++) {
-        printf("Traversing to node %u: %d\n", i, current->n); // Debug print
+        printf("Traversing to node %u: %d\n", i, current->n); /* Debug print */
         current = current->next;
     }
 
     /* If the node at the given index doesn't exist */
     if (current == NULL) {
-        printf("Error: Node at index %u not found\n", index); // Debug print
+        printf("Error: Node at index %u not found\n", index); /* Debug print */
         return (-1);
     }
 
-    printf("Deleting node at index %u: %d\n", index, current->n); // Debug print
+    printf("Deleting node at index %u: %d\n", index, current->n); /* Debug print */
 
     /* Update the pointers and delete the node */
     if (current->next != NULL)
