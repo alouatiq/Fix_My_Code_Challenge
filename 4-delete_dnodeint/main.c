@@ -24,59 +24,75 @@ int main(void)
     print_dlistint(head);
 
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 5);
+    if (delete_dnodeint_at_index(&head, 5) == -1)
+        printf("Failed to delete node at index 5\n");
     print_dlistint(head);
 
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 0);
+    if (delete_dnodeint_at_index(&head, 0) == -1)
+        printf("Failed to delete node at index 0\n");
     print_dlistint(head);
 
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 0);
+    if (delete_dnodeint_at_index(&head, 0) == -1)
+        printf("Failed to delete node at index 0\n");
     print_dlistint(head);
 
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 0);
+    if (delete_dnodeint_at_index(&head, 0) == -1)
+        printf("Failed to delete node at index 0\n");
     print_dlistint(head);
 
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 0);
+    if (delete_dnodeint_at_index(&head, 0) == -1)
+        printf("Failed to delete node at index 0\n");
     print_dlistint(head);
 
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 0);
+    if (delete_dnodeint_at_index(&head, 0) == -1)
+        printf("Failed to delete node at index 0\n");
     print_dlistint(head);
 
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 0);
+    if (delete_dnodeint_at_index(&head, 0) == -1)
+        printf("Failed to delete node at index 0\n");
     print_dlistint(head);
 
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 0);
+    if (delete_dnodeint_at_index(&head, 0) == -1)
+        printf("Failed to delete node at index 0\n");
 
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 0);
+    if (delete_dnodeint_at_index(&head, 0) == -1)
+        printf("Failed to delete node at index 0\n");
 
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 0);
+    if (delete_dnodeint_at_index(&head, 0) == -1)
+        printf("Failed to delete node at index 0\n");
 
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 0);
+    if (delete_dnodeint_at_index(&head, 0) == -1)
+        printf("Failed to delete node at index 0\n");
 
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 0);
+    if (delete_dnodeint_at_index(&head, 0) == -1)
+        printf("Failed to delete node at index 0\n");
 
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 0);
+    if (delete_dnodeint_at_index(&head, 0) == -1)
+        printf("Failed to delete node at index 0\n");
 
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 0);
+    if (delete_dnodeint_at_index(&head, 0) == -1)
+        printf("Failed to delete node at index 0\n");
 
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 0);
+    if (delete_dnodeint_at_index(&head, 0) == -1)
+        printf("Failed to delete node at index 0\n");
 
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 0);
+    if (delete_dnodeint_at_index(&head, 0) == -1)
+        printf("Failed to delete node at index 0\n");
 
     print_dlistint(head);
     free_dlistint(head);
