@@ -1,49 +1,51 @@
-#include <string.h>
 #include <stdlib.h>
 #include "lists.h"
 
 /**
- * add_dnodeint_end - Add a node at the end of a list
+ * delete_dnodeint_at_index - Deletes the node at a given position in a list
  *
  * @head: The address of the pointer to the first element of the list
- * @n: The number to store in the new element
+ * @index: The index of the node to delete (starting from 0)
  *
- * Return: A pointer to the new element, or NULL if it failed
+ * Return: 1 if successful, -1 if it failed
  */
-dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
+int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-    dlistint_t *new;
-    dlistint_t *l;
+    dlistint_t *current;
+    unsigned int i;
 
-    /* Allocate memory for the new node */
-    new = malloc(sizeof(dlistint_t));
-    if (new == NULL)
+    /* Check if the list is empty or head is NULL */
+    if (head == NULL || *head == NULL)
+        return (-1);
+
+    current = *head;
+
+    /* If deleting the first node */
+    if (index == 0)
     {
-        return (NULL);
+        *head = current->next;
+        if (current->next != NULL)
+            current->next->prev = NULL;
+        free(current);
+        return (1);
     }
 
-    /* Initialize the new node */
-    new->n = n;
-    new->next = NULL;
-
-    /* If the list is empty, make the new node the head */
-    if (*head == NULL)
+    /* Traverse the list to find the node at the given index */
+    for (i = 0; current != NULL && i < index; i++)
     {
-        *head = new;
-        new->prev = NULL;
-        return (new);
+        current = current->next;
     }
 
-    /* Traverse the list to the end */
-    l = *head;
-    while (l->next != NULL)
-    {
-        l = l->next;
-    }
+    /* If the node at the given index doesn't exist */
+    if (current == NULL)
+        return (-1);
 
-    /* Link the last node to the new node */
-    l->next = new;
-    new->prev = l;
+    /* Update the pointers and delete the node */
+    if (current->next != NULL)
+        current->next->prev = current->prev;
+    if (current->prev != NULL)
+        current->prev->next = current->next;
 
-    return (new);
+    free(current);
+    return (1);
 }
