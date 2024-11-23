@@ -11,6 +11,7 @@
 int main(void)
 {
     dlistint_t *head;
+    int result; /* Declare variables at the top */
 
     head = NULL;
 
@@ -55,7 +56,7 @@ int main(void)
 
     /* Test deleting a node at an out-of-range index */
     printf("Deleting node at index 100 (out of range):\n");
-    int result = delete_dnodeint_at_index(&head, 100);
+    result = delete_dnodeint_at_index(&head, 100); /* Assign value after declaration */
     printf("Result: %d\n", result);
     print_dlistint(head);
     printf("-----------------\n");
