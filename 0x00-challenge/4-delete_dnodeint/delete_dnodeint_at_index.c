@@ -11,14 +11,21 @@
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-    dlistint_t *current = *head;
+    dlistint_t *current;
+    unsigned int i; /* Declare variables at the top */
 
     if (!head || !*head) /* Handle empty list */
         return (-1);
 
+    current = *head;
+    i = 0;
+
     /* Traverse to the node at the given index */
-    for (unsigned int i = 0; current && i < index; i++)
+    while (current && i < index)
+    {
         current = current->next;
+        i++;
+    }
 
     if (!current) /* Index out of range */
         return (-1);
